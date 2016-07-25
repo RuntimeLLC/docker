@@ -4,7 +4,7 @@ MAINTAINER RuntimeLLC
 LABEL version="0.1"
 
 ENV NODE_VERSION="6"
-ENV DEPENDENCIES="curl"
+ENV DEPENDENCIES="curl build-essential"
 
 #Install dependencies
 RUN apt-get update \
