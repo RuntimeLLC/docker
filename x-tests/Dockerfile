@@ -23,16 +23,14 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* \
     && git config --global url."https://github".insteadOf git://github
 
-#Install ruby
+#Install ruby, bundler
 RUN apt-get update \
     && apt-get install -y --no-install-recommends software-properties-common \
     && apt-add-repository -y ppa:brightbox/ruby-ng \
     && apt-get update \
     && apt-get install -y --no-install-recommends ruby${RUBY_VERSION} ruby${RUBY_VERSION}-dev \
+    && gem install bundler \
     && rm -rf /var/lib/apt/lists/*
-
-#Install Bundler
-RUN gem install bundler
 
 #Install Mozilla Firefox
 RUN apt-get update \
