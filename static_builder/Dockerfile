@@ -4,7 +4,7 @@ MAINTAINER RuntimeLLC
 LABEL version="0.1"
 
 ENV NODE_VERSION="6"
-ENV DEPENDENCIES="curl build-essential"
+ENV DEPENDENCIES="curl build-essential ca-certificates"
 
 #Install dependencies
 RUN apt-get update \
@@ -19,7 +19,6 @@ RUN apt-get update \
 
 #Install node-js
 RUN curl -sL https://deb.nodesource.com/setup_${NODE_VERSION}.x | bash - \
-    && apt-get update \
     && apt-get install -y --no-install-recommends nodejs \
     && npm set progress=false \
     && rm -rf /var/lib/apt/lists/*
