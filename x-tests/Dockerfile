@@ -32,6 +32,7 @@ RUN apt-get update \
 #Install Mozilla Firefox
 RUN apt-get update \
     && apt-get install -y --no-install-recommends libxcomposite-dev libasound2 libgtk2.0-0 \
+    && ln -s /lib/x86_64-linux-gnu/libdbus-1.so.3 /lib/x86_64-linux-gnu/libdbus-glib-1.so.2 \
     && rm -rf /var/lib/apt/lists/* \
     && curl https://ftp.mozilla.org/pub/firefox/releases/${FF_VERSION}/linux-x86_64/en-US/firefox-${FF_VERSION}.tar.bz2 --output /tmp/firefox.tar.bz2 \
     && tar -jxf /tmp/firefox.tar.bz2 -C /tmp/ \
