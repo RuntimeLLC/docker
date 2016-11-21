@@ -42,5 +42,5 @@ RUN apt-get update \
 
 #Install X virtual framebuffer for Selenium
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends xvfb x11-xkb-utils xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic x11vnc ratpoison\
+    && apt-get install -y --no-install-recommends xvfb x11-xkb-utils xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic\
     && rm -rf /var/lib/apt/lists/* && sed -i "s/XVFBARGS=\"-screen 0 640x480x8\"/XVFBARGS=\"-screen 0 1280x1024x8\"/" /usr/bin/xvfb-run && sed -i "s/LISTENTCP=\"-nolisten tcp\"/LISTENTCP=\"-l\"/" /usr/bin/xvfb-run
