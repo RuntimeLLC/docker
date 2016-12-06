@@ -6,7 +6,7 @@ LABEL version="0.1"
 ENV TZ="Europe/Moscow"
 ENV RUBY_VERSION="2.3"
 ENV FF_VERSION="45.0"
-ENV DEPENDENCIES="curl build-essential libssl-dev libreadline-dev zlib1g-dev libpq-dev imagemagick libmagickwand-dev"
+ENV DEPENDENCIES="curl build-essential libssl-dev libreadline-dev zlib1g-dev libpq-dev imagemagick libmagickwand-dev wkhtmltopdf"
 
 #Time Zone Configuration
 RUN ln -snf /usr/share/zoneinfo/${TZ} /etc/localtime \
